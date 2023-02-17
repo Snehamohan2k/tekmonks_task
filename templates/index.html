@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time.com Latest Stories</title>
+    <style>
+     
+        .list-box {
+            background-color: yellow;
+            width: 300px;
+            padding: 10px;
+            float: right;
+        }
+        li{
+            padding: 15px;
+        }
+        a:link {
+  color: blue;
+  text-decoration:none;
+}
+       .featured-voice {
+            margin-bottom: 20px;
+            background-color: yellow;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="featured-voice">
+        <h2>{{ featured_voice['title'] }}</h2>
+        <p>{{ featured_voice['text'] }}</p>
+        <p>{{ featured_voice['link'] }}</p>
+    </div>
+    <div class="list-box    ">
+        <h1>Latest </h1>
+        <ul>
+            {% for story in latest_stories %}
+                <li><a href="{{ story.link }}">{{ story.title }}</a></li>
+                <br>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
